@@ -1,35 +1,30 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
+  <meta charset="UTF-8">
   <title>Brady’s Music Site</title>
-  <style>
-    body {
-      background: #0f0f0f;
-      color: white;
-      font-family: Arial;
-      text-align: center;
-    }
-    audio {
-      margin: 20px;
-      width: 300px;
-    }
-  </style>
+  <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
-  <h1>🎵 Brady’s Music Website</h1>
-  <p>stop the cap this site goes hard</p>
+<h1>🎵 Brady’s Spotify-ish Site</h1>
 
-  <h2>Song 1</h2>
-  <audio controls>
-    <source src="music/back to friends - sombr - SoundLoadMate.com.mp3
-" type="audio/mpeg">
-  </audio>
+<div class="song" onclick="playSong('Back to Friends – sombr', 'music/back to friends - sombr - SoundLoadMate.com.mp3')">
+  ▶ Back to Friends – sombr
+</div>
 
-  <h2>Song 2</h2>
-  <audio controls>
-    <source src="song2.mp3" type="audio/mpeg">
-  </audio>
+<div class="song" onclick="playSong('Song 2', 'song2.mp3')">
+  ▶ Song 2
+</div>
 
+<!-- Bottom Player -->
+<div class="player">
+  <button onclick="togglePlay()">⏯</button>
+  <div class="title" id="nowPlaying">Nothing playing</div>
+</div>
+
+<audio id="audio"></audio>
+
+<script src="script.js"></script>
 </body>
 </html>
