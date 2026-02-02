@@ -7,7 +7,7 @@ const nowPlaying = document.getElementById("nowPlaying");
 const songs = [
   {
     title: "Back to Friends – sombr",
-    src: "music/back_to_friends.mp3"
+    src: "music/back to friends - sombr - SoundLoadMate.com.mp3"
   }
 ];
 
