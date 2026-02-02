@@ -1,1 +1,52 @@
+body {
+  margin: 0;
+  background: #121212;
+  color: white;
+  font-family: Arial, sans-serif;
+  padding-bottom: 90px;
+}
 
+h1 {
+  padding: 20px;
+}
+
+.song {
+  padding: 15px 20px;
+  border-bottom: 1px solid #333;
+  cursor: pointer;
+}
+
+.song:hover {
+  background: #1db954;
+  color: black;
+}
+
+.player {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background: #181818;
+  padding: 10px 20px;
+  display: flex;
+  align-items: center;
+  gap: 15px;
+}
+
+button {
+  background: #1db954;
+  border: none;
+  padding: 10px 15px;
+  font-size: 16px;
+  cursor: pointer;
+  border-radius: 5px;
+}
+
+button:hover {
+  opacity: 0.8;
+}
+
+.title {
+  flex: 1;
+  font-size: 14px;
+}
