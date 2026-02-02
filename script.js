@@ -6,10 +6,8 @@ const nowPlaying = document.getElementById("nowPlaying");
 const playPauseBtn = document.getElementById("playPauseBtn");
 
 const songs = [
-  {
-    title: "Back to Friends – sombr",
-    src: "music/back to friends - sombr - SoundLoadMate.com.mp3"
-  }
+  {title: "Back to Friends – Sombr", src: "music/back to friends - sombr - SoundLoadMate.com.mp3"},
+  {title: "4 Big Guys - Digbar", src: "music/4 Big Guys.mp3"},
 ];
 
 let songIndex = 0;
