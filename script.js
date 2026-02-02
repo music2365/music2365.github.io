@@ -3,6 +3,7 @@ const progress = document.getElementById("progress");
 const current = document.getElementById("current");
 const duration = document.getElementById("duration");
 const nowPlaying = document.getElementById("nowPlaying");
+const playPauseBtn = document.getElementById("playPauseBtn");
 
 const songs = [
   {
@@ -18,10 +19,24 @@ function playSong(index) {
   audio.src = songs[index].src;
   nowPlaying.textContent = songs[index].title;
   audio.play();
+  updateButton(); // make sure button shows pause
 }
 
 function togglePlay() {
-  audio.paused ? audio.play() : audio.pause();
+  if(audio.paused){
+    audio.play();
+  } else {
+    audio.pause();
+  }
+  updateButton();
+}
+
+function updateButton() {
+  if(audio.paused){
+    playPauseBtn.src = "play.png"; // show play image
+  } else {
+    playPauseBtn.src = "pause.png"; // show pause image
+  }
 }
 
 function next() {
@@ -50,3 +65,6 @@ function format(time) {
   const sec = Math.floor(time % 60).toString().padStart(2, "0");
   return `${min}:${sec}`;
 }
+
+// Make sure button updates if audio ends
+audio.addEventListener("ended", updateButton);
