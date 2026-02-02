@@ -58,3 +58,11 @@ h1 {
 input[type=range] {
   flex: 1;
 }
+
+#playPauseBtn {
+  width: 40px;      /* change this to make it bigger or smaller */
+  height: 40px;     /* keeps it square */
+  cursor: pointer;
+  vertical-align: middle; /* aligns with ⏮ and ⏭ buttons */
+}
+
