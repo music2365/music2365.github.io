@@ -8,7 +8,21 @@ body {
 }
 
 h1 {
-  padding: 20px;
+  padding: 10px 20px;   /* small top/bottom padding */
+  margin: 0;            /* remove default margin */
+}
+
+#search {
+  width: 400px;          /* however long u want */
+  margin: 0 0 20px 20px; /* top 0, left 20px to match h1 text start */
+  padding: 8px 12px;     /* smaller padding so it’s not too tall */
+  display: inline-block; /* so it can align horizontally with text if needed */
+  background: #181818;
+  color: white;
+  font-size: 16px;
+  border-radius: 25px;
+  border: 1px solid #1db954;
+  outline: none;
 }
 
 /* ===== SONG LIST ===== */
@@ -21,20 +35,6 @@ h1 {
 .song:hover {
   background: #1db954;
   color: black;
-}
-
-/* ===== SEARCH BAR ===== */
-#search {
-  width: 400px;          /* keep the width you like */
-  margin: 10px 0 20px 0; /* top, right/left, bottom spacing */
-  padding: 10px 14px;    /* smaller vertical padding */
-  display: block;
-  background: #181818;
-  color: white;
-  font-size: 16px;
-  border-radius: 25px;
-  border: 1px solid #1db954;
-  outline: none;
 }
 
 
