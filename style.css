@@ -100,6 +100,7 @@ h1 {
   position: absolute;
   left: 24px;
   top: 45%; /* nudged up from 50% for perfect vertical centering */
+  margin-down: 10px;
   transform: translateY(-50%);
   width: 210px;
 
