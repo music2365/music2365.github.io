@@ -9,7 +9,14 @@
 
 <h1>Musify | Song Library</h1>
 
-<div class="song" onclick="playSong(0)">Back to Friends – Sombr</div>
+<input 
+  type="text" 
+  id="search" 
+  placeholder="Search songs..." 
+  oninput="filterSongs()"
+/>
+
+<div id="songList"></div>
 
 <!-- Bottom Player -->
 <div class="player">
