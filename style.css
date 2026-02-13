@@ -4,7 +4,7 @@ body {
   background: #121212;
   color: white;
   font-family: Arial, sans-serif;
-  padding-bottom: 150px; /* reduced */
+  padding-bottom: 150px; /* space for bottom player */
 }
 
 h1 {
@@ -28,7 +28,7 @@ h1 {
   width: calc(100% - 40px);
   margin: 0 auto 14px;
   display: block;
-  padding: 12px 16px; /* slightly smaller */
+  padding: 12px 16px;
   background: #181818;
   color: white;
   font-size: 15px;
@@ -53,12 +53,13 @@ h1 {
   left: 0;
   width: 100%;
   background: #181818;
-  padding: 8px 0 14px; /* 👈 squished */
+  padding: 8px 0 14px;
   display: flex;
   flex-direction: column;
   align-items: center;
-  gap: 8px; /* smaller gap */
+  gap: 8px;
   border-top: 2px solid #1db954;
+  height: 70px; /* added height to center title/artist */
 }
 
 /* ===== CONTROLS ===== */
@@ -66,14 +67,14 @@ h1 {
   display: flex;
   justify-content: center;
   align-items: center;
-  gap: 8px; /* tighter */
+  gap: 8px;
 }
 
 .controls button {
   background: none;
   border: none;
   color: white;
-  font-size: 18px; /* smaller arrows */
+  font-size: 18px;
   cursor: pointer;
 }
 
@@ -82,7 +83,7 @@ h1 {
 }
 
 #playPauseBtn {
-  width: 40px;  /* smaller */
+  width: 40px;
   height: 40px;
   cursor: pointer;
 }
@@ -91,25 +92,26 @@ h1 {
 .track-info {
   position: relative;
   width: 100%;
-  height: 34px; /* shorter line */
+  height: 28px; /* height of the line for centering */
 }
 
-/* ===== SONG TITLE + ARTIST (LEFT) ===== */
+/* ===== SONG TITLE + ARTIST (LEFT, CENTERED VERTICALLY) ===== */
 .title-wrap {
   position: absolute;
   left: 24px;
-  top: 50%;
+  top: 50%; /* vertical center */
   transform: translateY(-50%);
   width: 210px;
 
   display: flex;
   flex-direction: column;
+  justify-content: center; /* vertical center of title + artist */
   overflow: hidden;
   text-align: left;
 }
 
 #songTitle {
-  font-size: 13px; /* smaller */
+  font-size: 14px;
   color: #fff;
   white-space: nowrap;
   overflow: hidden;
@@ -117,7 +119,7 @@ h1 {
 }
 
 #songArtist {
-  font-size: 11px; /* smaller */
+  font-size: 12px;
   color: #888;
   white-space: nowrap;
   overflow: hidden;
@@ -137,14 +139,14 @@ h1 {
 
 #current,
 #duration {
-  font-size: 11px;
+  font-size: 13px; /* slightly bigger times */
   color: #888;
 }
 
 /* ===== PROGRESS BAR ===== */
 #progress {
-  width: 190px;      /* slightly shorter */
-  height: 5px;       /* thinner */
+  width: 220px;      /* longer bar */
+  height: 5px;
   background: #333;
   border-radius: 5px;
   appearance: none;
@@ -154,7 +156,7 @@ h1 {
 /* Slider thumb */
 #progress::-webkit-slider-thumb {
   appearance: none;
-  width: 12px;       /* smaller knob */
+  width: 12px;
   height: 12px;
   border-radius: 50%;
   background: #1db954;
