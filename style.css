@@ -96,12 +96,15 @@ h1 {
   justify-content: center;
 }
 
-/* ===== TITLE + ARTIST (STACKED, NO SCROLL) ===== */
+/* ===== TITLE + ARTIST (LEFT-ALIGNED FIX) ===== */
 .title-wrap {
-  width: 160px; /* fixed so nothing shifts */
+  width: 220px;              /* 👈 wider so more text shows */
+  padding-left: 20px;        /* 👈 push text left */
+  box-sizing: border-box;
   display: flex;
   flex-direction: column;
   overflow: hidden;
+  text-align: left;          /* 👈 key fix */
 }
 
 /* Song title */
@@ -137,7 +140,7 @@ h1 {
   color: #888;
 }
 
-/* ===== PROGRESS BAR (LOCKED) ===== */
+/* ===== PROGRESS BAR ===== */
 #progress {
   width: 200px;
   height: 6px;
