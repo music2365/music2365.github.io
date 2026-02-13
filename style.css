@@ -4,7 +4,7 @@ body {
   background: #121212;
   color: white;
   font-family: Arial, sans-serif;
-  padding-bottom: 160px; /* space for player */
+  padding-bottom: 160px; /* space for bottom player */
 }
 
 h1 {
@@ -54,35 +54,33 @@ h1 {
 /* ===== BOTTOM PLAYER ===== */
 .player {
   position: fixed;
-  bottom: 20px;
-  left: 50%;
-  transform: translateX(-50%);
-  width: 90%;
-  max-width: 900px;
+  bottom: 0;
+  left: 0;
+  width: 100%; /* stretch across screen */
   background: #181818;
-  padding: 15px 25px;
-  border-radius: 16px;
+  padding: 15px 0 25px; /* keep same height, extra bottom padding for slider */
   display: flex;
   flex-direction: column;
   align-items: center;
   gap: 12px;
-  box-shadow: 0 4px 20px rgba(0,0,0,0.6);
+  box-shadow: 0 -2px 10px rgba(0,0,0,0.6);
+  border-top: 2px solid #1db954; /* subtle border visible when stretched */
 }
 
 /* ===== TOP CONTROLS ===== */
 .controls {
-  width: 100%;
+  width: 360px; /* keep buttons & spacing same length */
   display: flex;
-  justify-content: center; /* center everything */
+  justify-content: space-between;
   align-items: center;
-  gap: 20px; /* space between arrows and play */
+  gap: 12px;
 }
 
 .controls button {
   background: none;
   border: none;
   color: white;
-  font-size: 28px; /* slightly bigger arrows */
+  font-size: 22px; /* slightly smaller arrows */
   cursor: pointer;
 }
 
@@ -92,16 +90,16 @@ h1 {
 
 /* Play/Pause button inline with arrows */
 #playPauseBtn {
-  width: 60px;
-  height: 60px;
+  width: 50px; /* smaller */
+  height: 50px; /* smaller */
   cursor: pointer;
   vertical-align: middle;
-  margin: 0 10px; /* space between play and arrows */
+  margin: 0 8px; /* spacing from arrows */
 }
 
 /* ===== BOTTOM TRACK INFO ===== */
 .track-info {
-  width: 100%;
+  width: 360px; /* same width as controls */
   display: flex;
   align-items: center;
   gap: 12px;
@@ -111,10 +109,11 @@ h1 {
   flex-shrink: 0;
   font-size: 14px;
   color: #bbb;
-  max-width: 200px;
+  max-width: 140px; /* shorter so text stays left */
   overflow: hidden;
   text-overflow: ellipsis;
   white-space: nowrap;
+  text-align: left; /* flush to left */
 }
 
 /* progress + time */
@@ -139,14 +138,14 @@ h1 {
   border-radius: 5px;
   background: #333;
   cursor: pointer;
-  flex: 1;
+  flex: 1; /* fills space next to song title */
 }
 
 /* Chrome / Edge */
 #progress::-webkit-slider-thumb {
   -webkit-appearance: none;
-  width: 16px;
-  height: 16px;
+  width: 14px;
+  height: 14px;
   border-radius: 50%;
   background: #1db954;
   border: none;
@@ -154,8 +153,8 @@ h1 {
 
 /* Firefox */
 #progress::-moz-range-thumb {
-  width: 16px;
-  height: 16px;
+  width: 14px;
+  height: 14px;
   border-radius: 50%;
   background: #1db954;
   border: none;
