@@ -59,7 +59,7 @@ h1 {
   align-items: center;
   gap: 8px;
   border-top: 2px solid #1db954;
-  height: 70px; /* added height to center title/artist */
+  height: 70px; /* keeps bar height consistent */
 }
 
 /* ===== CONTROLS ===== */
@@ -92,20 +92,20 @@ h1 {
 .track-info {
   position: relative;
   width: 100%;
-  height: 28px; /* height of the line for centering */
+  height: 28px; /* height of progress bar container */
 }
 
 /* ===== SONG TITLE + ARTIST (LEFT, CENTERED VERTICALLY) ===== */
 .title-wrap {
   position: absolute;
   left: 24px;
-  top: 50%; /* vertical center */
+  top: 45%; /* nudged up from 50% for perfect vertical centering */
   transform: translateY(-50%);
   width: 210px;
 
   display: flex;
   flex-direction: column;
-  justify-content: center; /* vertical center of title + artist */
+  justify-content: center;
   overflow: hidden;
   text-align: left;
 }
@@ -145,7 +145,7 @@ h1 {
 
 /* ===== PROGRESS BAR ===== */
 #progress {
-  width: 220px;      /* longer bar */
+  width: 220px;      /* slightly longer bar */
   height: 5px;
   background: #333;
   border-radius: 5px;
