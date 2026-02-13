@@ -67,11 +67,11 @@ function togglePlay() {
 
 // Update play/pause image
 function setPlayShape() {
-  playPauseBtn.src = "images/play.png";
+  playPauseBtn.src = "images/play-button.png";
 }
 
 function setPauseShape() {
-  playPauseBtn.src = "images/pause.png";
+  playPauseBtn.src = "images/pause-button.png";
 }
 
 // Next/Prev
