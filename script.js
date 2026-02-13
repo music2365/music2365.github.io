@@ -31,11 +31,14 @@ let isPaused = true;
 function renderSongs(list) {
   songList.innerHTML = "";
 
-  list.forEach((song, index) => {
+  list.forEach(song => {
+    const realIndex = songs.indexOf(song);
+
     const div = document.createElement("div");
     div.className = "song";
     div.textContent = `${song.title} – ${song.artist}`;
-    div.onclick = () => playSong(index);
+    div.onclick = () => playSong(realIndex);
+
     songList.appendChild(div);
   });
 }
