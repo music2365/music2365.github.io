@@ -88,22 +88,23 @@ h1 {
   cursor: pointer;
 }
 
-/* ===== TRACK INFO (CENTERED) ===== */
+/* ===== TRACK INFO ===== */
 .track-info {
   width: 360px;
   display: flex;
+  align-items: center;
   justify-content: center;
 }
 
-/* ===== TITLE + ARTIST ===== */
+/* ===== TITLE + ARTIST (STACKED, NO SCROLL) ===== */
 .title-wrap {
-  width: 150px; /* fixed so layout never shifts */
-  overflow: hidden;
+  width: 160px; /* fixed so nothing shifts */
   display: flex;
   flex-direction: column;
+  overflow: hidden;
 }
 
-/* song title */
+/* Song title */
 #songTitle {
   font-size: 14px;
   color: #fff;
@@ -112,7 +113,7 @@ h1 {
   text-overflow: ellipsis;
 }
 
-/* artist name */
+/* Artist */
 #songArtist {
   font-size: 12px;
   color: #888;
@@ -146,7 +147,7 @@ h1 {
   cursor: pointer;
 }
 
-/* Chrome / Edge thumb */
+/* Slider thumb */
 #progress::-webkit-slider-thumb {
   appearance: none;
   width: 14px;
@@ -156,7 +157,6 @@ h1 {
   border: none;
 }
 
-/* Firefox thumb */
 #progress::-moz-range-thumb {
   width: 14px;
   height: 14px;
