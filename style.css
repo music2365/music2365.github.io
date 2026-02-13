@@ -8,13 +8,11 @@ body {
 }
 
 /* ===== TOP BAR ===== */
-/* ===== TOP BAR ===== */
 .top-bar {
   display: flex;
   align-items: center;       /* vertically aligns h1 + input */
-  justify-content: center;   /* centers the content horizontally */
   gap: 20px;                 /* space between header and search */
-  padding: 10px 20px;        /* spacing from top and sides */
+  padding: 10px 20px;        /* spacing from edges */
 }
 
 .top-bar h1 {
@@ -23,15 +21,18 @@ body {
 }
 
 #search {
-  width: 300px;              /* search bar width */
-  padding: 6px 12px;
-  border-radius: 25px;
-  border: 1px solid #1db954;
-  outline: none;
+  width: 400px;         /* keep the length you want */
+  display: block;       /* so margin auto works */
+  margin: 10px auto 20px auto; /* top 10px, centered horizontally, bottom 20px */
+  padding: 8px 12px;
   background: #181818;
   color: white;
   font-size: 16px;
+  border-radius: 25px;
+  border: 1px solid #1db954;
+  outline: none;
 }
+
 
 #search::placeholder {
   color: #888;
