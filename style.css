@@ -11,7 +11,7 @@ body {
 .top-bar {
   display: flex;
   align-items: center;       /* vertically aligns h1 + input */
-  gap: 10px;                 /* space between header and search */
+  gap: 0px;                 /* space between header and search */
   padding: 10px 20px;        /* spacing from edges */
 }
 
