@@ -4,7 +4,7 @@ body {
   background: #121212;
   color: white;
   font-family: Arial, sans-serif;
-  padding-bottom: 160px; /* makes space for bottom player */
+  padding-bottom: 200px; /* extra space for floating player */
 }
 
 h1 {
@@ -30,14 +30,13 @@ h1 {
   display: block;
   padding: 14px 16px;
 
-  background: #181818;        /* dark black */
+  background: #181818;
   color: white;
   font-size: 16px;
 
-  border-radius: 25px;        /* pill shape */
-  border: 1px solid #1db954;  /* Spotify green */
+  border-radius: 25px;
+  border: 1px solid #1db954;
   outline: none;
-
   transition: 0.25s ease;
 }
 
@@ -60,31 +59,33 @@ h1 {
   bottom: 20px;
   left: 50%;
   transform: translateX(-50%);
-
   width: 90%;
   max-width: 900px;
   background: #181818;
-  padding: 15px 20px;
+  padding: 20px 25px 40px; /* extra bottom for floating play button */
   border-radius: 16px;
-
-  display: grid;
-  grid-template-columns: auto 1fr auto;
-  align-items: center;
-  gap: 20px;
-}
-
-/* ===== CONTROLS ===== */
-.controls {
   display: flex;
+  flex-direction: column;
   align-items: center;
-  gap: 20px;
+  gap: 12px;
+  box-shadow: 0 4px 20px rgba(0,0,0,0.6);
 }
 
+/* ===== TOP CONTROLS (floating play button) ===== */
+.controls {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  position: relative;
+}
+
+/* Arrow buttons */
 .controls button {
   background: none;
   border: none;
   color: white;
-  font-size: 22px;
+  font-size: 24px;
   cursor: pointer;
 }
 
@@ -92,29 +93,43 @@ h1 {
   color: #1db954;
 }
 
+/* Play/Pause button floating in the middle */
 #playPauseBtn {
-  width: 40px;
-  height: 40px;
+  width: 60px;
+  height: 60px;
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%) translateY(-50%);
+  background: none;
   cursor: pointer;
-  vertical-align: middle;
+  z-index: 10;
 }
 
-/* ===== TRACK INFO ===== */
+/* ===== BOTTOM TRACK INFO ===== */
 .track-info {
+  width: 100%;
   display: flex;
-  flex-direction: column;
-  gap: 6px;
+  align-items: center;
+  gap: 12px;
+  margin-top: 35px; /* push slider below floating play button */
 }
 
 #nowPlaying {
+  flex-shrink: 0;
   font-size: 14px;
   color: #bbb;
+  max-width: 200px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
 }
 
+/* progress + time */
 .time {
   display: flex;
   align-items: center;
   gap: 10px;
+  flex: 1;
 }
 
 #current,
@@ -131,22 +146,23 @@ h1 {
   border-radius: 5px;
   background: #333;
   cursor: pointer;
-  max-width: 350px; /* shorter, centered with track info */
+  flex: 1;
 }
 
 /* Chrome / Edge */
 #progress::-webkit-slider-thumb {
   -webkit-appearance: none;
-  width: 14px;
-  height: 14px;
+  width: 16px;
+  height: 16px;
   border-radius: 50%;
   background: #1db954;
+  border: none;
 }
 
 /* Firefox */
 #progress::-moz-range-thumb {
-  width: 14px;
-  height: 14px;
+  width: 16px;
+  height: 16px;
   border-radius: 50%;
   background: #1db954;
   border: none;
