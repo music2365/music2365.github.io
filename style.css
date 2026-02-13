@@ -4,7 +4,7 @@ body {
   background: #121212;
   color: white;
   font-family: Arial, sans-serif;
-  padding-bottom: 160px;
+  padding-bottom: 170px;
 }
 
 h1 {
@@ -35,6 +35,15 @@ h1 {
   border-radius: 25px;
   border: 1px solid #1db954;
   outline: none;
+}
+
+#search::placeholder {
+  color: #888;
+}
+
+#search:focus {
+  border-color: #1ed760;
+  box-shadow: 0 0 10px rgba(30, 215, 96, 0.4);
 }
 
 /* ===== BOTTOM PLAYER ===== */
@@ -76,36 +85,40 @@ h1 {
 #playPauseBtn {
   width: 44px;
   height: 44px;
+  cursor: pointer;
 }
 
-/* ===== TRACK INFO ===== */
+/* ===== TRACK INFO (CENTERED) ===== */
 .track-info {
   width: 360px;
   display: flex;
-  align-items: center;
-  gap: 12px;
+  justify-content: center;
 }
 
-/* ===== SONG TITLE (LOCKED AREA) ===== */
+/* ===== TITLE + ARTIST ===== */
 .title-wrap {
-  width: 140px;          /* 🔒 fixed space */
+  width: 150px; /* fixed so layout never shifts */
   overflow: hidden;
-  position: relative;
+  display: flex;
+  flex-direction: column;
 }
 
-/* scrolling text */
-#nowPlaying {
-  display: inline-block;
-  white-space: nowrap;
+/* song title */
+#songTitle {
   font-size: 14px;
-  color: #bbb;
-  animation: scrollTitle 10s linear infinite;
+  color: #fff;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
 }
 
-/* scroll animation */
-@keyframes scrollTitle {
-  0% { transform: translateX(0); }
-  100% { transform: translateX(-100%); }
+/* artist name */
+#songArtist {
+  font-size: 12px;
+  color: #888;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
 }
 
 /* ===== TIME + PROGRESS ===== */
@@ -113,6 +126,7 @@ h1 {
   display: flex;
   align-items: center;
   gap: 10px;
+  margin-left: 12px;
 }
 
 /* time text */
@@ -122,9 +136,9 @@ h1 {
   color: #888;
 }
 
-/* ===== PROGRESS BAR (ABSOLUTELY LOCKED) ===== */
+/* ===== PROGRESS BAR (LOCKED) ===== */
 #progress {
-  width: 200px;          /* 🔒 never changes */
+  width: 200px;
   height: 6px;
   background: #333;
   border-radius: 5px;
@@ -132,15 +146,17 @@ h1 {
   cursor: pointer;
 }
 
-/* thumb */
+/* Chrome / Edge thumb */
 #progress::-webkit-slider-thumb {
   appearance: none;
   width: 14px;
   height: 14px;
   border-radius: 50%;
   background: #1db954;
+  border: none;
 }
 
+/* Firefox thumb */
 #progress::-moz-range-thumb {
   width: 14px;
   height: 14px;
