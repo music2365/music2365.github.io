@@ -20,28 +20,51 @@
 
 <!-- Bottom Player -->
 <div class="player">
+
+  <!-- Controls -->
   <div class="controls">
     <button onclick="prev()">⏮</button>
 
-    <!-- Play/Pause button as image -->
-    <img id="playPauseBtn" src="images/play-button.png" alt="Play/Pause Button" onclick="togglePlay()" />
+    <img
+      id="playPauseBtn"
+      src="images/play-button.png"
+      alt="Play / Pause"
+      onclick="togglePlay()"
+    />
 
     <button onclick="next()">⏭</button>
   </div>
 
+  <!-- Track Info -->
   <div class="track-info">
+
+    <!-- Song + Artist (Spotify-style) -->
     <div class="title-wrap">
-      <div id="nowPlaying">...</div>
+      <div id="songTitle">Select a song</div>
+      <div id="songArtist">—</div>
     </div>
+
+    <!-- Progress -->
     <div class="time">
       <span id="current">0:00</span>
-      <input type="range" id="progress" value="0" min="0" max="100" step="0.0001">
+
+      <input
+        type="range"
+        id="progress"
+        value="0"
+        min="0"
+        max="100"
+        step="0.0001"
+      />
+
       <span id="duration">0:00</span>
     </div>
+
   </div>
 </div>
 
 <audio id="audio"></audio>
+
 <script src="script.js"></script>
 </body>
 </html>
