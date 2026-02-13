@@ -1,1 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Request a Song</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+      background: #121212;
+      color: white;
+      display: flex;
+      flex-direction: column;
+      height: 100vh; /* full viewport height */
+    }
 
+    /* Back button */
+    #backBtn {
+      padding: 10px 20px;
+      margin: 10px;
+      width: max-content;
+      background: #1db954;
+      border: none;
+      border-radius: 8px;
+      color: white;
+      font-size: 16px;
+      cursor: pointer;
+    }
+
+    #backBtn:hover {
+      background: #1ed760;
+    }
+
+    /* iframe */
+    iframe {
+      flex: 1; /* take remaining height */
+      width: 100%;
+      border: none;
+    }
+  </style>
+</head>
+<body>
+
+  <button id="backBtn" onclick="goBack()">← Back</button>
+
+  <!-- Replace with your Google Form link -->
+  <iframe src="https://docs.google.com/forms/d/e/YOUR_FORM_ID/viewform?embedded=true"></iframe>
+
+  <script>
+    function goBack() {
+      window.location.href = "index.html"; // goes back to main page
+    }
+  </script>
+</body>
+</html>
