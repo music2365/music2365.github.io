@@ -93,18 +93,17 @@ h1 {
   width: 360px;
   display: flex;
   align-items: center;
-  justify-content: center;
+  justify-content: flex-start; /* 👈 KEY FIX */
 }
 
-/* ===== TITLE + ARTIST (LEFT-ALIGNED FIX) ===== */
+/* ===== TITLE + ARTIST (ACTUALLY LEFT NOW) ===== */
 .title-wrap {
-  width: 220px;              /* 👈 wider so more text shows */
-  padding-left: 20px;        /* 👈 push text left */
-  box-sizing: border-box;
+  width: 240px;          /* 👈 more room for text */
+  margin-right: 10px;
   display: flex;
   flex-direction: column;
   overflow: hidden;
-  text-align: left;          /* 👈 key fix */
+  text-align: left;
 }
 
 /* Song title */
@@ -130,7 +129,7 @@ h1 {
   display: flex;
   align-items: center;
   gap: 10px;
-  margin-left: 12px;
+  margin-left: auto; /* 👈 pushes progress to center-right cleanly */
 }
 
 /* time text */
@@ -140,9 +139,9 @@ h1 {
   color: #888;
 }
 
-/* ===== PROGRESS BAR ===== */
+/* ===== PROGRESS BAR (MORE CENTERED) ===== */
 #progress {
-  width: 200px;
+  width: 180px;          /* slightly smaller = better centering */
   height: 6px;
   background: #333;
   border-radius: 5px;
