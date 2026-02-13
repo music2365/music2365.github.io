@@ -81,7 +81,7 @@ h1 {
   background: none;
   border: none;
   color: white;
-  font-size: 22px;
+  font-size: 22px; /* slightly smaller arrows */
   cursor: pointer;
 }
 
@@ -99,32 +99,34 @@ h1 {
 
 /* ===== BOTTOM TRACK INFO ===== */
 .track-info {
+  width: 360px; /* keeps same width as controls */
   display: flex;
   align-items: center;
   gap: 12px;
-  width: 360px; /* fixed width like before */
-  padding: 0 20px; /* margin from screen edges */
 }
 
+/* Song title */
 #nowPlaying {
-  flex-shrink: 0;
+  flex-shrink: 0; /* prevents shrinking */
   font-size: 14px;
   color: #bbb;
-  max-width: 150px; /* smaller max width so slider isn't too long */
+  max-width: 140px; /* adjust max-width if needed */
   overflow: hidden;
   text-overflow: ellipsis;
   white-space: nowrap;
-  text-align: left; /* flush left */
+  text-align: left;
+  margin-left: 0px; /* adjust left margin if needed */
 }
 
-/* progress + time */
+/* slider + time container */
 .time {
   display: flex;
   align-items: center;
   gap: 10px;
-  flex: 1; /* slider fills remaining space next to song title */
+  flex: 1; /* takes the remaining space */
 }
 
+/* time text */
 #current,
 #duration {
   font-size: 12px;
@@ -139,9 +141,12 @@ h1 {
   border-radius: 5px;
   background: #333;
   cursor: pointer;
-  max-width: 210px; /* fixed slider length */
+  flex: 1; /* fills remaining space next to song title */
+  min-width: 150px; /* ensures it never gets too small */
+  max-width: 250px; /* ensures it doesn’t get too long */
 }
 
+/* Chrome / Edge */
 #progress::-webkit-slider-thumb {
   -webkit-appearance: none;
   width: 14px;
@@ -151,6 +156,7 @@ h1 {
   border: none;
 }
 
+/* Firefox */
 #progress::-moz-range-thumb {
   width: 14px;
   height: 14px;
