@@ -58,14 +58,14 @@ h1 {
   left: 0;
   width: 100%; /* full screen width */
   background: #181818;
-  padding: 12px 0 20px; /* keep same height */
+  padding: 12px 0 20px;
   display: flex;
   flex-direction: column;
   align-items: center;
   gap: 10px;
   box-shadow: 0 -2px 8px rgba(0,0,0,0.5);
-  border-top: 2px solid #1db954; /* only top line separator visible */
-  overflow: hidden; /* prevents cutoff */
+  border-top: 2px solid #1db954; /* top separator line */
+  overflow: hidden;
 }
 
 /* ===== TOP CONTROLS ===== */
@@ -100,10 +100,11 @@ h1 {
 
 /* ===== BOTTOM TRACK INFO ===== */
 .track-info {
-  width: 360px; /* same width as controls */
+  width: 100%; /* full width for title + slider */
   display: flex;
   align-items: center;
   gap: 12px;
+  padding: 0 20px; /* margin from screen edges */
 }
 
 #nowPlaying {
@@ -122,7 +123,7 @@ h1 {
   display: flex;
   align-items: center;
   gap: 10px;
-  flex: 1;
+  flex: 1; /* slider fills remaining space */
 }
 
 #current,
