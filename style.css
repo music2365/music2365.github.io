@@ -4,7 +4,7 @@ body {
   background: #121212;
   color: white;
   font-family: Arial, sans-serif;
-  padding-bottom: 200px; /* extra space for floating player */
+  padding-bottom: 160px; /* space for player */
 }
 
 h1 {
@@ -29,11 +29,9 @@ h1 {
   margin: 0 auto 15px;
   display: block;
   padding: 14px 16px;
-
   background: #181818;
   color: white;
   font-size: 16px;
-
   border-radius: 25px;
   border: 1px solid #1db954;
   outline: none;
@@ -62,7 +60,7 @@ h1 {
   width: 90%;
   max-width: 900px;
   background: #181818;
-  padding: 20px 25px 40px; /* extra bottom for floating play button */
+  padding: 15px 25px;
   border-radius: 16px;
   display: flex;
   flex-direction: column;
@@ -71,21 +69,20 @@ h1 {
   box-shadow: 0 4px 20px rgba(0,0,0,0.6);
 }
 
-/* ===== TOP CONTROLS (floating play button) ===== */
+/* ===== TOP CONTROLS ===== */
 .controls {
   width: 100%;
   display: flex;
-  justify-content: space-between;
+  justify-content: center; /* center everything */
   align-items: center;
-  position: relative;
+  gap: 20px; /* space between arrows and play */
 }
 
-/* Arrow buttons */
 .controls button {
   background: none;
   border: none;
   color: white;
-  font-size: 24px;
+  font-size: 28px; /* slightly bigger arrows */
   cursor: pointer;
 }
 
@@ -93,16 +90,13 @@ h1 {
   color: #1db954;
 }
 
-/* Play/Pause button floating in the middle */
+/* Play/Pause button inline with arrows */
 #playPauseBtn {
   width: 60px;
   height: 60px;
-  position: absolute;
-  left: 50%;
-  transform: translateX(-50%) translateY(-50%);
-  background: none;
   cursor: pointer;
-  z-index: 10;
+  vertical-align: middle;
+  margin: 0 10px; /* space between play and arrows */
 }
 
 /* ===== BOTTOM TRACK INFO ===== */
@@ -111,7 +105,6 @@ h1 {
   display: flex;
   align-items: center;
   gap: 12px;
-  margin-top: 35px; /* push slider below floating play button */
 }
 
 #nowPlaying {
