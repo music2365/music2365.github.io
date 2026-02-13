@@ -34,8 +34,13 @@ function renderSongs(list) {
   if (list.length === 0) {
     // No results found
     const div = document.createElement("div");
-    div.className = "song"; // keeps styling like other songs
-    div.innerHTML = `We didn't find what you were looking for but you can request it <a href="/requests" style="text-decoration: underline; color: #1db954;">here</a>.`;
+    div.className = "song"; // keep styling consistent
+    div.innerHTML = `
+      <span style="font-weight: bold; color: #1db954;">
+        We didn't find what you were looking for but you can request it 
+        <a href="/requests" style="text-decoration: underline; color: #ADD8E6;">here</a>.
+      </span>
+    `;
     songList.appendChild(div);
     return;
   }
