@@ -8,11 +8,13 @@ body {
 }
 
 /* ===== TOP BAR ===== */
+/* ===== TOP BAR ===== */
 .top-bar {
   display: flex;
   align-items: center;       /* vertically aligns h1 + input */
+  justify-content: center;   /* centers the content horizontally */
   gap: 20px;                 /* space between header and search */
-  padding: 10px 20px;        /* spacing from edges */
+  padding: 10px 20px;        /* spacing from top and sides */
 }
 
 .top-bar h1 {
