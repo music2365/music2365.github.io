@@ -2,59 +2,73 @@ const audio = document.getElementById("audio");
 const progress = document.getElementById("progress");
 const current = document.getElementById("current");
 const duration = document.getElementById("duration");
-const nowPlaying = document.getElementById("nowPlaying");
+
+const songTitle = document.getElementById("songTitle");
+const songArtist = document.getElementById("songArtist");
+
 const playPauseBtn = document.getElementById("playPauseBtn");
-
-const songs = [
-  {title: "Back to Friends – Sombr", src: "music/back to friends - sombr - SoundLoadMate.com.mp3"},
-  {title: "4 Big Guys - Digbar", src: "music/4 Big Guys.mp3"},
-];
-
 const songList = document.getElementById("songList");
 const searchInput = document.getElementById("search");
 
-// Render songs
+/* ===== SONG DATA ===== */
+const songs = [
+  {
+    title: "Back to Friends",
+    artist: "Sombr",
+    src: "music/back to friends - sombr - SoundLoadMate.com.mp3"
+  },
+  {
+    title: "4 Big Guys",
+    artist: "DigBar",
+    src: "music/4 Big Guys.mp3"
+  }
+];
+
+let songIndex = 0;
+let isPaused = true;
+
+/* ===== RENDER SONG LIST ===== */
 function renderSongs(list) {
   songList.innerHTML = "";
 
   list.forEach((song, index) => {
     const div = document.createElement("div");
     div.className = "song";
-    div.textContent = song.title;
+    div.textContent = `${song.title} – ${song.artist}`;
     div.onclick = () => playSong(index);
     songList.appendChild(div);
   });
 }
 
-// Filter songs
+/* ===== SEARCH ===== */
 function filterSongs() {
   const query = searchInput.value.toLowerCase();
   const filtered = songs.filter(song =>
-    song.title.toLowerCase().includes(query)
+    song.title.toLowerCase().includes(query) ||
+    song.artist.toLowerCase().includes(query)
   );
   renderSongs(filtered);
 }
 
-// First load
+searchInput.addEventListener("input", filterSongs);
 renderSongs(songs);
 
-
-let songIndex = 0;
-let isPaused = true; // start paused
-
-// Play a song
+/* ===== PLAY SONG ===== */
 function playSong(index) {
   songIndex = index;
   audio.src = songs[index].src;
-  nowPlaying.textContent = songs[index].title;
+
+  songTitle.textContent = songs[index].title;
+  songArtist.textContent = songs[index].artist;
+
   audio.play();
   isPaused = false;
   setPauseShape();
 }
 
-// Toggle play/pause
+/* ===== PLAY / PAUSE ===== */
 function togglePlay() {
-  if(audio.paused){
+  if (audio.paused) {
     audio.play();
     isPaused = false;
     setPauseShape();
@@ -65,7 +79,6 @@ function togglePlay() {
   }
 }
 
-// Update play/pause image
 function setPlayShape() {
   playPauseBtn.src = "images/play-button.png";
 }
@@ -74,7 +87,7 @@ function setPauseShape() {
   playPauseBtn.src = "images/pause-button.png";
 }
 
-// Next/Prev
+/* ===== NEXT / PREV ===== */
 function next() {
   songIndex = (songIndex + 1) % songs.length;
   playSong(songIndex);
@@ -85,15 +98,15 @@ function prev() {
   playSong(songIndex);
 }
 
-// Format time like 0:00
+/* ===== TIME FORMAT ===== */
 function format(time) {
-  if (!time) return "0:00";
+  if (!time || isNaN(time)) return "0:00";
   const min = Math.floor(time / 60);
   const sec = Math.floor(time % 60).toString().padStart(2, "0");
   return `${min}:${sec}`;
 }
 
-// Smooth progress bar using requestAnimationFrame
+/* ===== PROGRESS UPDATE ===== */
 function updateProgress() {
   progress.value = (audio.currentTime / audio.duration) * 100 || 0;
   current.textContent = format(audio.currentTime);
@@ -101,15 +114,14 @@ function updateProgress() {
   requestAnimationFrame(updateProgress);
 }
 
-// Start the smooth updater
 requestAnimationFrame(updateProgress);
 
-// Update audio when user drags progress bar
+/* ===== SEEK ===== */
 progress.addEventListener("input", () => {
   audio.currentTime = (progress.value / 100) * audio.duration;
 });
 
-// Make sure button updates when song ends
+/* ===== SONG END ===== */
 audio.addEventListener("ended", () => {
   isPaused = true;
   setPlayShape();
