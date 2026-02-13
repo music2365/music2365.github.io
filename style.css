@@ -7,22 +7,37 @@ body {
   padding-bottom: 150px; /* space for bottom player */
 }
 
-h1 {
-  padding: 10px 20px;   /* small top/bottom padding */
-  margin: 0;            /* remove default margin */
+/* ===== TOP BAR ===== */
+.top-bar {
+  display: flex;
+  align-items: center;       /* vertically aligns h1 + input */
+  gap: 20px;                 /* space between header and search */
+  padding: 10px 20px;        /* spacing from edges */
+}
+
+.top-bar h1 {
+  margin: 0;
+  font-size: 24px;
 }
 
 #search {
-  width: 400px;          /* however long u want */
-  margin: 0 0 20px 20px; /* top 0, left 20px to match h1 text start */
-  padding: 8px 12px;     /* smaller padding so it’s not too tall */
-  display: inline-block; /* so it can align horizontally with text if needed */
-  background: #181818;
-  color: white;
-  font-size: 16px;
+  width: 300px;              /* search bar width */
+  padding: 6px 12px;
   border-radius: 25px;
   border: 1px solid #1db954;
   outline: none;
+  background: #181818;
+  color: white;
+  font-size: 16px;
+}
+
+#search::placeholder {
+  color: #888;
+}
+
+#search:focus {
+  border-color: #1ed760;
+  box-shadow: 0 0 8px rgba(30, 215, 96, 0.35);
 }
 
 /* ===== SONG LIST ===== */
@@ -35,16 +50,6 @@ h1 {
 .song:hover {
   background: #1db954;
   color: black;
-}
-
-
-#search::placeholder {
-  color: #888;
-}
-
-#search:focus {
-  border-color: #1ed760;
-  box-shadow: 0 0 8px rgba(30, 215, 96, 0.35);
 }
 
 /* ===== BOTTOM PLAYER ===== */
@@ -96,15 +101,13 @@ h1 {
   height: 28px; /* height of progress bar container */
 }
 
-/* ===== SONG TITLE + ARTIST (LEFT, CENTERED VERTICALLY) ===== */
+/* ===== SONG TITLE + ARTIST (LEFT, VERTICALLY CENTERED) ===== */
 .title-wrap {
   position: absolute;
   left: 24px;
-  top: 45%; /* nudged up from 50% for perfect vertical centering */
-  margin-down: 40px;
+  top: 50%;               /* perfect vertical centering */
   transform: translateY(-50%);
   width: 210px;
-
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -141,13 +144,13 @@ h1 {
 
 #current,
 #duration {
-  font-size: 13px; /* slightly bigger times */
+  font-size: 14px; /* slightly bigger times */
   color: #888;
 }
 
 /* ===== PROGRESS BAR ===== */
 #progress {
-  width: 220px;      /* slightly longer bar */
+  width: 240px;      /* slightly longer bar */
   height: 5px;
   background: #333;
   border-radius: 5px;
@@ -173,8 +176,10 @@ h1 {
   border: none;
 }
 
+/* ===== NO RESULTS MESSAGE ===== */
 #noResultsMsg {
-  text-align: center;  /* centers the text */
-  margin: 20px 0;      /* optional: some spacing above and below */
+  text-align: center;
+  margin: 20px 0;
+  font-weight: bold;
+  color: #1db954;
 }
-
