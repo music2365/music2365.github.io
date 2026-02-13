@@ -1,15 +1,17 @@
+/* ===== BODY & BASE ===== */
 body {
   margin: 0;
   background: #121212;
   color: white;
   font-family: Arial, sans-serif;
-  padding-bottom: 120px;
+  padding-bottom: 160px; /* makes space for bottom player */
 }
 
 h1 {
   padding: 20px;
 }
 
+/* ===== SONG LIST ===== */
 .song {
   padding: 15px 20px;
   cursor: pointer;
@@ -21,54 +23,11 @@ h1 {
   color: black;
 }
 
-.player {
-  position: fixed;
-  bottom: 0;
-  left: 0;
-  right: 0;
-  background: #181818;
-  padding: 15px;
-  display: flex;
-  align-items: center;
-  gap: 20px;
-}
-
-.controls button {
-  background: none;
-  border: none;
-  color: white;
-  font-size: 22px;
-  cursor: pointer;
-}
-
-.controls button:hover {
-  color: #1db954;
-}
-
-.track-info {
-  flex: 1;
-}
-
-.time {
-  display: flex;
-  align-items: center;
-  gap: 10px;
-}
-
-input[type=range] {
-  flex: 1;
-}
-
-#playPauseBtn {
-  width: 40px;      /* change this to make it bigger or smaller */
-  height: 40px;     /* keeps it square */
-  cursor: pointer;
-  vertical-align: middle; /* aligns with ⏮ and ⏭ buttons */
-}
-
+/* ===== SEARCH BAR ===== */
 #search {
   width: calc(100% - 40px);
-  margin: 0 20px 15px;
+  margin: 0 auto 15px;
+  display: block;
   padding: 14px 16px;
 
   background: #181818;        /* dark black */
@@ -95,4 +54,100 @@ input[type=range] {
   box-shadow: 0 0 10px rgba(30, 215, 96, 0.45);
 }
 
+/* ===== BOTTOM PLAYER ===== */
+.player {
+  position: fixed;
+  bottom: 20px;
+  left: 50%;
+  transform: translateX(-50%);
 
+  width: 90%;
+  max-width: 900px;
+  background: #181818;
+  padding: 15px 20px;
+  border-radius: 16px;
+
+  display: grid;
+  grid-template-columns: auto 1fr auto;
+  align-items: center;
+  gap: 20px;
+}
+
+/* ===== CONTROLS ===== */
+.controls {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+
+.controls button {
+  background: none;
+  border: none;
+  color: white;
+  font-size: 22px;
+  cursor: pointer;
+}
+
+.controls button:hover {
+  color: #1db954;
+}
+
+#playPauseBtn {
+  width: 40px;
+  height: 40px;
+  cursor: pointer;
+  vertical-align: middle;
+}
+
+/* ===== TRACK INFO ===== */
+.track-info {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+#nowPlaying {
+  font-size: 14px;
+  color: #bbb;
+}
+
+.time {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+#current,
+#duration {
+  font-size: 12px;
+  color: #888;
+}
+
+/* ===== PROGRESS SLIDER ===== */
+#progress {
+  -webkit-appearance: none;
+  appearance: none;
+  height: 6px;
+  border-radius: 5px;
+  background: #333;
+  cursor: pointer;
+  max-width: 350px; /* shorter, centered with track info */
+}
+
+/* Chrome / Edge */
+#progress::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  width: 14px;
+  height: 14px;
+  border-radius: 50%;
+  background: #1db954;
+}
+
+/* Firefox */
+#progress::-moz-range-thumb {
+  width: 14px;
+  height: 14px;
+  border-radius: 50%;
+  background: #1db954;
+  border: none;
+}
