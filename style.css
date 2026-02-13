@@ -1,10 +1,14 @@
-/* ===== BASE ===== */
+/* ===== BODY & BASE ===== */
 body {
   margin: 0;
   background: #121212;
   color: white;
   font-family: Arial, sans-serif;
-  padding-bottom: 160px;
+  padding-bottom: 160px; /* space for bottom player */
+}
+
+h1 {
+  padding: 20px;
 }
 
 /* ===== SONG LIST ===== */
@@ -22,7 +26,8 @@ body {
 /* ===== SEARCH BAR ===== */
 #search {
   width: calc(100% - 40px);
-  margin: 0 20px 15px;
+  margin: 0 auto 15px;
+  display: block;
   padding: 14px 16px;
   background: #181818;
   color: white;
@@ -37,6 +42,10 @@ body {
   color: #888;
 }
 
+#search:hover {
+  border-color: #1ed760;
+}
+
 #search:focus {
   border-color: #1ed760;
   box-shadow: 0 0 10px rgba(30, 215, 96, 0.45);
@@ -49,48 +58,30 @@ body {
   left: 0;
   width: 100%;
   background: #181818;
-  border-top: 2px solid #1db954;
-  padding: 12px 0 16px;
-  display: flex;
-  align-items: center;
-}
-
-/* ===== LEFT (SONG TITLE) ===== */
-.left {
-  flex: 1;
-  padding-left: 24px; /* left margin from screen */
-  min-width: 0; /* REQUIRED for ellipsis */
-}
-
-#nowPlaying {
-  font-size: 14px;
-  color: #bbb;
-  white-space: nowrap;
-  overflow: hidden;
-  text-overflow: ellipsis;
-}
-
-/* ===== CENTER (CONTROLS + BAR) ===== */
-.center {
-  flex: 0 0 420px; /* locked width */
+  padding: 12px 0 20px;
   display: flex;
   flex-direction: column;
   align-items: center;
-  gap: 6px;
+  gap: 10px;
+  box-shadow: 0 -2px 8px rgba(0,0,0,0.5);
+  border-top: 2px solid #1db954; /* top separator line */
+  overflow: hidden;
 }
 
-/* controls */
+/* ===== TOP CONTROLS ===== */
 .controls {
+  width: 360px; /* fixed width for buttons + spacing */
   display: flex;
+  justify-content: center;
   align-items: center;
-  gap: 8px; /* arrows closer */
+  gap: 12px;
 }
 
 .controls button {
   background: none;
   border: none;
   color: white;
-  font-size: 18px; /* smaller buttons */
+  font-size: 22px; /* slightly smaller arrows */
   cursor: pointer;
 }
 
@@ -99,44 +90,65 @@ body {
 }
 
 #playPauseBtn {
-  width: 40px;
-  height: 40px;
+  width: 50px;
+  height: 50px;
+  cursor: pointer;
+  vertical-align: middle;
+  margin: 0 8px;
 }
 
-/* ===== TIME + PROGRESS ===== */
+/* ===== BOTTOM TRACK INFO ===== */
+.track-info {
+  width: 360px; /* keeps same width as controls */
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+/* Song title */
+#nowPlaying {
+  flex-shrink: 0; /* prevents shrinking */
+  font-size: 14px;
+  color: #bbb;
+  max-width: 140px; /* adjust max-width if needed */
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  text-align: left;
+  margin-left: 0px; /* adjust left margin if needed */
+}
+
+/* slider + time container */
 .time {
-  width: 100%;
   display: flex;
   align-items: center;
   gap: 10px;
+  flex: 1; /* takes the remaining space */
 }
 
+/* time text */
 #current,
 #duration {
   font-size: 12px;
   color: #888;
 }
 
-/* ===== PROGRESS BAR ===== */
+/* ===== PROGRESS SLIDER ===== */
 #progress {
-  flex: 1;
+  -webkit-appearance: none;
+  appearance: none;
   height: 6px;
-  background: #333;
   border-radius: 5px;
-  appearance: none;
+  background: #333;
   cursor: pointer;
+  flex: 1; /* fills remaining space next to song title */
+  min-width: 150px; /* ensures it never gets too small */
+  max-width: 250px; /* ensures it doesn’t get too long */
 }
 
-/* thumb */
+/* Chrome / Edge */
 #progress::-webkit-slider-thumb {
-  appearance: none;
-  width: 14px;
-  height: 14px;
-  border-radius: 50%;
-  background: #1db954;
-}
-
-#progress::-moz-range-thumb {
+  -webkit-appearance: none;
   width: 14px;
   height: 14px;
   border-radius: 50%;
@@ -144,7 +156,11 @@ body {
   border: none;
 }
 
-/* ===== RIGHT SPACER ===== */
-.right {
-  flex: 1;
+/* Firefox */
+#progress::-moz-range-thumb {
+  width: 14px;
+  height: 14px;
+  border-radius: 50%;
+  background: #1db954;
+  border: none;
 }
