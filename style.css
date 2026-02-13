@@ -88,18 +88,17 @@ h1 {
   cursor: pointer;
 }
 
-/* ===== TRACK INFO (CENTERED GROUP) ===== */
+/* ===== TRACK INFO (TITLE LEFT, BAR CENTER) ===== */
 .track-info {
   width: 360px;
-  display: flex;
+  display: grid;
+  grid-template-columns: auto 24px auto;
   align-items: center;
-  justify-content: center; /* 👈 center EVERYTHING together */
-  gap: 16px;               /* 👈 SAME distance between title & bar */
 }
 
 /* ===== TITLE + ARTIST ===== */
 .title-wrap {
-  width: 220px;
+  width: 200px;
   display: flex;
   flex-direction: column;
   overflow: hidden;
@@ -124,11 +123,12 @@ h1 {
   text-overflow: ellipsis;
 }
 
-/* ===== TIME + PROGRESS ===== */
+/* ===== TIME + PROGRESS (CENTERED) ===== */
 .time {
   display: flex;
   align-items: center;
   gap: 10px;
+  justify-content: center;
 }
 
 /* time text */
@@ -138,7 +138,7 @@ h1 {
   color: #888;
 }
 
-/* ===== PROGRESS BAR (TRUE CENTER) ===== */
+/* ===== PROGRESS BAR (FIXED CENTER) ===== */
 #progress {
   width: 180px;
   height: 6px;
