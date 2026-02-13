@@ -31,14 +31,21 @@ let isPaused = true;
 function renderSongs(list) {
   songList.innerHTML = "";
 
+  if (list.length === 0) {
+    // No results found
+    const div = document.createElement("div");
+    div.className = "song"; // keeps styling like other songs
+    div.innerHTML = `We didn't find what you were looking for but you can request it <a href="requests/index.html" style="text-decoration: underline; color: #1db954;">here</a>.`;
+    songList.appendChild(div);
+    return;
+  }
+
   list.forEach(song => {
     const realIndex = songs.indexOf(song);
-
     const div = document.createElement("div");
     div.className = "song";
     div.textContent = `${song.title} – ${song.artist}`;
     div.onclick = () => playSong(realIndex);
-
     songList.appendChild(div);
   });
 }
