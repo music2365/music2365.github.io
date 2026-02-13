@@ -35,7 +35,7 @@ function renderSongs(list) {
     // No results found
     const div = document.createElement("div");
     div.className = "song"; // keeps styling like other songs
-    div.innerHTML = `We didn't find what you were looking for but you can request it <a href="requests/index.html" style="text-decoration: underline; color: #1db954;">here</a>.`;
+    div.innerHTML = `We didn't find what you were looking for but you can request it <a href="/requests" style="text-decoration: underline; color: #1db954;">here</a>.`;
     songList.appendChild(div);
     return;
   }
