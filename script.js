@@ -12,16 +12,7 @@ const searchInput = document.getElementById("search");
 
 /* ===== SONG DATA ===== */
 const songs = [
-  {
-    title: "Back to Friends",
-    artist: "Sombr",
-    src: "music/back to friends - sombr - SoundLoadMate.com.mp3"
-  },
-  {
-    title: "4 Big Guys",
-    artist: "DigBar",
-    src: "music/4 Big Guys.mp3"
-  }
+  {title: "4 Big Guys", artist: "DigBar", src: "music/4 Big Guys.mp3"},
 ];
 
 let songIndex = 0;
