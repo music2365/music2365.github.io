@@ -171,3 +171,9 @@ h1 {
   background: #1db954;
   border: none;
 }
+
+#noResultsMsg {
+  text-align: center;  /* centers the text */
+  margin: 20px 0;      /* optional: some spacing above and below */
+}
+
