@@ -56,7 +56,7 @@ h1 {
   position: fixed;
   bottom: 0;
   left: 0;
-  width: 100%; /* full screen width */
+  width: 100%;
   background: #181818;
   padding: 12px 0 20px;
   display: flex;
@@ -74,14 +74,14 @@ h1 {
   display: flex;
   justify-content: center;
   align-items: center;
-  gap: 12px; /* space between arrows and play button */
+  gap: 12px;
 }
 
 .controls button {
   background: none;
   border: none;
   color: white;
-  font-size: 22px; /* slightly smaller arrows */
+  font-size: 22px;
   cursor: pointer;
 }
 
@@ -89,21 +89,20 @@ h1 {
   color: #1db954;
 }
 
-/* Play/Pause button inline with arrows */
 #playPauseBtn {
   width: 50px;
   height: 50px;
   cursor: pointer;
   vertical-align: middle;
-  margin: 0 8px; /* spacing from arrows */
+  margin: 0 8px;
 }
 
 /* ===== BOTTOM TRACK INFO ===== */
 .track-info {
-  width: 100%; /* full width for title + slider */
   display: flex;
   align-items: center;
   gap: 12px;
+  width: 360px; /* fixed width like before */
   padding: 0 20px; /* margin from screen edges */
 }
 
@@ -111,7 +110,7 @@ h1 {
   flex-shrink: 0;
   font-size: 14px;
   color: #bbb;
-  max-width: 200px; /* enough space to show title */
+  max-width: 150px; /* smaller max width so slider isn't too long */
   overflow: hidden;
   text-overflow: ellipsis;
   white-space: nowrap;
@@ -123,7 +122,7 @@ h1 {
   display: flex;
   align-items: center;
   gap: 10px;
-  flex: 1; /* slider fills remaining space */
+  flex: 1; /* slider fills remaining space next to song title */
 }
 
 #current,
@@ -140,10 +139,9 @@ h1 {
   border-radius: 5px;
   background: #333;
   cursor: pointer;
-  flex: 1; /* fills remaining space next to song title */
+  max-width: 210px; /* fixed slider length */
 }
 
-/* Chrome / Edge */
 #progress::-webkit-slider-thumb {
   -webkit-appearance: none;
   width: 14px;
@@ -153,7 +151,6 @@ h1 {
   border: none;
 }
 
-/* Firefox */
 #progress::-moz-range-thumb {
   width: 14px;
   height: 14px;
