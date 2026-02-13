@@ -29,19 +29,24 @@ let isPaused = true;
 
 /* ===== RENDER SONG LIST ===== */
 function renderSongs(list) {
+  // Remove any previous "no results" message
+  const existingMessage = document.getElementById("noResultsMsg");
+  if (existingMessage) existingMessage.remove();
+
   songList.innerHTML = "";
 
   if (list.length === 0) {
-    // No results found
-    const div = document.createElement("div");
-    div.className = "song"; // keep styling consistent
-    div.innerHTML = `
-      <span style="font-weight: bold; color: #1db954;">
+    // No results found → create a separate h1 below search
+    const h1 = document.createElement("h1");
+    h1.id = "noResultsMsg";
+    h1.innerHTML = `
+      <span style="color: #1db954;">
         We didn't find what you were looking for but you can request it 
-        <a href="/requests" style="text-decoration: underline; color: #ADD8E6;">here</a>.
+        <a href="/requests" style="color: #ADD8E6; text-decoration: underline;">here</a>.
       </span>
     `;
-    songList.appendChild(div);
+    // Insert it below the search input
+    searchInput.insertAdjacentElement("afterend", h1);
     return;
   }
 
