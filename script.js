@@ -10,6 +10,35 @@ const songs = [
   {title: "4 Big Guys - Digbar", src: "music/4 Big Guys.mp3"},
 ];
 
+const songList = document.getElementById("songList");
+const searchInput = document.getElementById("search");
+
+// Render songs
+function renderSongs(list) {
+  songList.innerHTML = "";
+
+  list.forEach((song, index) => {
+    const div = document.createElement("div");
+    div.className = "song";
+    div.textContent = song.title;
+    div.onclick = () => playSong(index);
+    songList.appendChild(div);
+  });
+}
+
+// Filter songs
+function filterSongs() {
+  const query = searchInput.value.toLowerCase();
+  const filtered = songs.filter(song =>
+    song.title.toLowerCase().includes(query)
+  );
+  renderSongs(filtered);
+}
+
+// First load
+renderSongs(songs);
+
+
 let songIndex = 0;
 let isPaused = true; // start paused
 
