@@ -4,7 +4,42 @@ body {
   background: #121212;
   color: white;
   font-family: Arial, sans-serif;
-  padding-bottom: 150px;
+  padding-bottom: 160px;
+}
+
+/* ===== SONG LIST ===== */
+.song {
+  padding: 15px 20px;
+  cursor: pointer;
+  border-bottom: 1px solid #333;
+}
+
+.song:hover {
+  background: #1db954;
+  color: black;
+}
+
+/* ===== SEARCH BAR ===== */
+#search {
+  width: calc(100% - 40px);
+  margin: 0 20px 15px;
+  padding: 14px 16px;
+  background: #181818;
+  color: white;
+  font-size: 16px;
+  border-radius: 25px;
+  border: 1px solid #1db954;
+  outline: none;
+  transition: 0.25s ease;
+}
+
+#search::placeholder {
+  color: #888;
+}
+
+#search:focus {
+  border-color: #1ed760;
+  box-shadow: 0 0 10px rgba(30, 215, 96, 0.45);
 }
 
 /* ===== BOTTOM PLAYER ===== */
@@ -14,18 +49,17 @@ body {
   left: 0;
   width: 100%;
   background: #181818;
-  border-top: 2px solid #1db954; /* separator line only */
+  border-top: 2px solid #1db954;
   padding: 12px 0 16px;
   display: flex;
-  justify-content: space-between;
   align-items: center;
 }
 
-/* ===== LEFT: SONG TITLE ===== */
+/* ===== LEFT (SONG TITLE) ===== */
 .left {
   flex: 1;
-  padding-left: 20px; /* margin from left edge */
-  min-width: 0; /* IMPORTANT for text overflow */
+  padding-left: 24px; /* left margin from screen */
+  min-width: 0; /* REQUIRED for ellipsis */
 }
 
 #nowPlaying {
@@ -33,31 +67,30 @@ body {
   color: #bbb;
   white-space: nowrap;
   overflow: hidden;
-  text-overflow: ellipsis; /* long titles fade nicely */
-  max-width: 100%;
+  text-overflow: ellipsis;
 }
 
-/* ===== CENTER: CONTROLS + PROGRESS ===== */
+/* ===== CENTER (CONTROLS + BAR) ===== */
 .center {
-  flex: 0 0 420px; /* LOCKED width — never changes */
+  flex: 0 0 420px; /* locked width */
   display: flex;
   flex-direction: column;
   align-items: center;
-  gap: 8px;
+  gap: 6px;
 }
 
-/* buttons row */
+/* controls */
 .controls {
   display: flex;
   align-items: center;
-  gap: 10px;
+  gap: 8px; /* arrows closer */
 }
 
 .controls button {
   background: none;
   border: none;
   color: white;
-  font-size: 20px;
+  font-size: 18px; /* smaller buttons */
   cursor: pointer;
 }
 
@@ -66,11 +99,11 @@ body {
 }
 
 #playPauseBtn {
-  width: 46px;
-  height: 46px;
+  width: 40px;
+  height: 40px;
 }
 
-/* progress row */
+/* ===== TIME + PROGRESS ===== */
 .time {
   width: 100%;
   display: flex;
@@ -108,9 +141,10 @@ body {
   height: 14px;
   border-radius: 50%;
   background: #1db954;
+  border: none;
 }
 
-/* ===== RIGHT SPACER (balances layout) ===== */
+/* ===== RIGHT SPACER ===== */
 .right {
   flex: 1;
 }
