@@ -25,9 +25,9 @@ h1 {
 
 /* ===== SEARCH BAR ===== */
 #search {
-  width: 400px; /* or whatever width you want */
-  margin: 0 0 15px 20px; /* top:0, right:0, bottom:15px, left:20px to line up with header */
-  padding: 10px 14px; /* make it a bit smaller */
+  width: 400px;          /* keep the width you like */
+  margin: 10px 0 20px 0; /* top, right/left, bottom spacing */
+  padding: 10px 14px;    /* smaller vertical padding */
   display: block;
   background: #181818;
   color: white;
@@ -36,6 +36,7 @@ h1 {
   border: 1px solid #1db954;
   outline: none;
 }
+
 
 #search::placeholder {
   color: #888;
