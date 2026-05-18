@@ -106,23 +106,15 @@ body {
 }
 
 /* ===== SONG TITLE + ARTIST (LEFT, VERTICALLY CENTERED) ===== */
-.title-wrap {
-  position: absolute;
-  left: 24px;
-  top: 0;
-  height: 100%;
-  width: 210px;
-
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-
-  overflow: hidden;
-  text-align: left;
-
-  padding-top: 2px;
-  padding-bottom: 2px;
-}
+.title-wrap { 
+  position: absolute; 
+  left: 24px; top: 50%; /* perfect vertical centering */ 
+  transform: translateY(-50%); 
+  width: 210px; display: flex; 
+  flex-direction: column; 
+  justify-content: center; 
+  overflow: hidden; 
+  text-align: left; }
 
 #songTitle {
   font-size: 14px;
