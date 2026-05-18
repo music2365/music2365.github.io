@@ -13,7 +13,7 @@ const searchInput = document.getElementById("search");
 /* ===== SONG DATA ===== */
 const songs = [
   {title: "4 Big Guys", artist: "DigBar", src: "music/4 Big Guys.mp3"},
-  {title: "BabyDoll", artist: "Dominic Fike", src: "Dominic Fike Baby Doll (Official Audio).mp3"},
+  {title: "BabyDoll", artist: "Dominic Fike", src: "music/Dominic Fike Baby Doll (Official Audio).mp3"},
 ];
 
 let songIndex = 0;
