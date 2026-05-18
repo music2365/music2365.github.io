@@ -27,7 +27,7 @@ function renderSongs(list) {
 
   songList.innerHTML = "";
 
-  if (list.length === 0) {
+  if (list.length === 0 && searchInput.value.trim() !== "") {
     // No results found → create a separate h1 below search
     const h1 = document.createElement("h1");
     h1.id = "noResultsMsg";
@@ -63,7 +63,7 @@ function filterSongs() {
 }
 
 searchInput.addEventListener("input", filterSongs);
-renderSongs(songs);
+renderSongs([]);
 
 /* ===== PLAY SONG ===== */
 function playSong(index) {
