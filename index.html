@@ -8,13 +8,23 @@
 <body>
 
 <div class="top-bar">
-  <h1>Musify | Song Library</h1>
-  <input 
-    type="text" 
-    id="search" 
-    placeholder="Search Song Title or Artist" 
-    oninput="filterSongs()"
-  />
+
+  <h1>
+    Musify |
+    <span>Song Library</span>
+  </h1>
+
+  <div class="search-wrap">
+    <span class="search-icon">⌕</span>
+
+    <input
+      type="text"
+      id="search"
+      placeholder="Search Song Title or Artist"
+      oninput="filterSongs()"
+    />
+  </div>
+
 </div>
 
 <div id="songList"></div>
