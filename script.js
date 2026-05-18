@@ -38,7 +38,7 @@ function renderSongs(list) {
       </span>
     `;
     // Insert it below the search input
-    searchInput.insertAdjacentElement("afterend", h1);
+    document.body.insertBefore(h1, songList);
     return;
   }
 
