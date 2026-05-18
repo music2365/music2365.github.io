@@ -1,7 +1,7 @@
 /* ===== BODY ===== */
 body {
   margin: 0;
-  background: #050505;
+  background: #121212;
   color: white;
   font-family: Arial, sans-serif;
   padding-bottom: 120px;
@@ -10,35 +10,71 @@ body {
 
 /* ===== TOP BAR ===== */
 .top-bar {
+  height: 72px;
+
   display: flex;
   align-items: center;
   justify-content: space-between;
 
-  padding: 20px 24px;
+  padding: 0 24px;
+
+  background: #0a0a0a;
+
+  border-bottom: 2px solid #1db954;
 }
 
+/* ===== TITLE ===== */
 .top-bar h1 {
   margin: 0;
-  font-size: 28px;
+
+  font-size: 30px;
   font-weight: bold;
+
   color: white;
 }
 
-/* ===== SEARCH ===== */
+/* ===== GREEN SONG LIBRARY ===== */
+.top-bar h1 span {
+  color: #1db954;
+}
+
+/* ===== SEARCH BAR ===== */
+.search-wrap {
+  position: relative;
+}
+
+/* ===== SEARCH ICON ===== */
+.search-icon {
+  position: absolute;
+
+  left: 16px;
+  top: 50%;
+
+  transform: translateY(-50%);
+
+  color: #888;
+  font-size: 18px;
+
+  pointer-events: none;
+}
+
+/* ===== SEARCH INPUT ===== */
 #search {
-  width: 480px;
+  width: 500px;
+  height: 46px;
 
-  padding: 12px 18px;
+  padding-left: 45px;
+  padding-right: 16px;
 
-  background: transparent;
+  background: #111;
   color: white;
 
-  border: 1px solid #1db954;
-  border-radius: 30px;
+  border: 2px solid #1db954;
+  border-radius: 18px;
 
   outline: none;
 
-  font-size: 18px;
+  font-size: 20px;
 }
 
 #search::placeholder {
@@ -46,14 +82,17 @@ body {
 }
 
 #search:focus {
-  box-shadow: 0 0 10px rgba(29, 185, 84, 0.4);
+  box-shadow: 0 0 10px rgba(29, 185, 84, 0.35);
 }
 
 /* ===== SONG LIST ===== */
 .song {
-  padding: 16px 24px;
-  border-bottom: 1px solid #222;
+  padding: 18px 24px;
+
+  border-bottom: 1px solid #2a2a2a;
+
   cursor: pointer;
+
   transition: 0.15s;
 }
 
@@ -65,30 +104,27 @@ body {
 /* ===== PLAYER ===== */
 .player {
   position: fixed;
+
   bottom: 0;
   left: 0;
 
   width: 100%;
   height: 110px;
 
-  background: #111;
+  background: #0a0a0a;
 
   border-top: 2px solid #1db954;
-
-  display: flex;
-  align-items: center;
-  justify-content: center;
 }
 
-/* ===== TRACK INFO ===== */
+/* ===== SONG INFO ===== */
 .track-info {
   position: absolute;
 
-  left: 26px;
-  bottom: 16px;
+  left: 28px;
+  top: 16px;
 
-  width: 240px;
-  height: 60px;
+  width: 250px;
+  height: 70px;
 
   display: flex;
   flex-direction: column;
@@ -97,20 +133,21 @@ body {
 
 /* ===== SONG TITLE ===== */
 #songTitle {
-  font-size: 30px;
+  font-size: 28px;
   font-weight: bold;
+
+  color: white;
 
   white-space: nowrap;
   overflow: hidden;
   text-overflow: ellipsis;
-
-  color: white;
 }
 
 /* ===== ARTIST ===== */
 #songArtist {
-  font-size: 22px;
-  color: #9b9b9b;
+  font-size: 20px;
+
+  color: #9d9d9d;
 
   white-space: nowrap;
   overflow: hidden;
@@ -119,9 +156,16 @@ body {
 
 /* ===== CONTROLS ===== */
 .controls {
+  position: absolute;
+
+  left: 50%;
+  top: 18px;
+
+  transform: translateX(-50%);
+
   display: flex;
   align-items: center;
-  gap: 28px;
+  gap: 30px;
 }
 
 /* ===== SKIP BUTTONS ===== */
@@ -130,6 +174,7 @@ body {
   border: none;
 
   color: white;
+
   font-size: 30px;
 
   cursor: pointer;
@@ -143,12 +188,12 @@ body {
   cursor: pointer;
 }
 
-/* ===== TIME + BAR ===== */
+/* ===== TIME + PROGRESS ===== */
 .time {
   position: absolute;
 
   left: 50%;
-  bottom: 12px;
+  bottom: 14px;
 
   transform: translateX(-50%);
 
@@ -157,14 +202,14 @@ body {
   gap: 12px;
 }
 
-/* ===== TIMES ===== */
+/* ===== TIME TEXT ===== */
 #current,
 #duration {
-  color: #9b9b9b;
+  color: #9d9d9d;
   font-size: 18px;
 }
 
-/* ===== PROGRESS ===== */
+/* ===== PROGRESS BAR ===== */
 #progress {
   width: 420px;
   height: 6px;
@@ -185,8 +230,8 @@ body {
   height: 16px;
 
   border-radius: 50%;
-  background: #1db954;
 
+  background: #1db954;
   border: none;
 }
 
@@ -195,18 +240,18 @@ body {
   height: 16px;
 
   border-radius: 50%;
-  background: #1db954;
 
+  background: #1db954;
   border: none;
 }
 
 /* ===== NO RESULTS ===== */
 #noResultsMsg {
   text-align: center;
+
   margin-top: 40px;
 
-  width: 100%;
-
   color: #1db954;
+
   font-size: 24px;
 }
