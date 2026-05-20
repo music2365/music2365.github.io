@@ -266,5 +266,5 @@ body {
 }
 .controls button,
 #playPauseBtn {
-  transform: translateY(-6px);
+  transform: translateY(-16px);
 }
