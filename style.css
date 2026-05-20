@@ -266,7 +266,7 @@ body {
 }
 .controls button,
 #playPauseBtn {
-  transform: translateY(-16px);
+  transform: translateY(-10px);
 }
 .skipBtn {
   width: 38px;
@@ -274,7 +274,7 @@ body {
 
   cursor: pointer;
 
-  transform: translateY(10px);
+  transform: translateY(0px);
 }
 
 #loopBtn {
@@ -283,5 +283,5 @@ body {
 
   cursor: pointer;
 
-  transform: translateY(10px);
+  transform: translateY(0px);
 }
