@@ -187,8 +187,8 @@ body {
 
 /* ===== PLAY BUTTON ===== */
 #playPauseBtn {
-  width: 60px;
-  height: 60px;
+  width: 50px;
+  height: 50px;
 
   cursor: pointer;
 }
@@ -266,7 +266,7 @@ body {
 }
 .controls button,
 #playPauseBtn {
-  transform: translateY(-16px);
+  transform: translateY(-6px);
 }
 .skipBtn {
   width: 38px;
