@@ -100,11 +100,11 @@ function togglePlay() {
 }
 
 function setPlayShape() {
-  playPauseBtn.src = "images/play-button.png";
+  playPauseBtn.src = "images/play.png";
 }
 
 function setPauseShape() {
-  playPauseBtn.src = "images/pause-button.png";
+  playPauseBtn.src = "images/pause.png";
 }
 
 /* ===== NEXT / PREV ===== */
