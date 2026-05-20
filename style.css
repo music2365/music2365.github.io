@@ -274,13 +274,14 @@ body {
 
   cursor: pointer;
 
-  transform: translateY(-10px);
+  transform: translateY(10px);
 }
+
 #loopBtn {
   width: 34px;
   height: 34px;
 
   cursor: pointer;
 
-  transform: translateY(-10px);
+  transform: translateY(10px);
 }
