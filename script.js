@@ -54,11 +54,19 @@ function renderSongs(list) {
 
 /* ===== SEARCH ===== */
 function filterSongs() {
-  const query = searchInput.value.toLowerCase();
+  const query = searchInput.value.trim().toLowerCase();
+
+  // If search is empty → show nothing
+  if (query === "") {
+    renderSongs([]);
+    return;
+  }
+
   const filtered = songs.filter(song =>
     song.title.toLowerCase().includes(query) ||
     song.artist.toLowerCase().includes(query)
   );
+
   renderSongs(filtered);
 }
 
