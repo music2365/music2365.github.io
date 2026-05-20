@@ -155,18 +155,24 @@ function back15() {
   audio.currentTime -= 15;
 }
 /* ===== LOOP ===== */
+/* ===== LOOP ===== */
 let looping = false;
 
 const loopBtn = document.getElementById("loopBtn");
 
 function toggleLoop() {
+
   looping = !looping;
 
   audio.loop = looping;
 
   if (looping) {
-    loopBtn.src = "images/loop-on.png";
+
+    loopBtn.src = "images/repeatblue.png";
+
   } else {
-    loopBtn.src = "images/loop-off.png";
+
+    loopBtn.src = "images/repeatgreen.png";
+
   }
 }
