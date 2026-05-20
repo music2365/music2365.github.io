@@ -138,3 +138,11 @@ audio.addEventListener("ended", () => {
   isPaused = true;
   setPlayShape();
 });
+/* ===== SKIP 15 SECONDS ===== */
+function forward15() {
+  audio.currentTime += 15;
+}
+
+function back15() {
+  audio.currentTime -= 15;
+}
