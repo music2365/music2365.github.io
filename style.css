@@ -164,9 +164,9 @@ body {
   position: absolute;
 
   left: 50%;
-  top: 30px;
+  top: 18px;
 
-  transform: translateX(-50%);
+  transform: translateX(-60%);
 
   display: flex;
   align-items: center
