@@ -169,7 +169,7 @@ body {
   transform: translateX(-40%);
 
   display: flex;
-  align-items: center
+  align-items: center;
   gap: 30px;
 }
 
