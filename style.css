@@ -268,3 +268,11 @@ body {
 #playPauseBtn {
   transform: translateY(-16px);
 }
+.skipBtn {
+  width: 38px;
+  height: 38px;
+
+  cursor: pointer;
+
+  transform: translateY(-10px);
+}
