@@ -166,7 +166,7 @@ body {
   left: 50%;
   top: 18px;
 
-  transform: translateX(-60%);
+  transform: translateX(-40%);
 
   display: flex;
   align-items: center
@@ -266,7 +266,7 @@ body {
 }
 .controls button,
 #playPauseBtn {
-  transform: translateY(-6px);
+  transform: translateY(-16px);
 }
 .skipBtn {
   width: 38px;
