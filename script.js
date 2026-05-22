@@ -9,11 +9,40 @@ const songArtist = document.getElementById("songArtist");
 const playPauseBtn = document.getElementById("playPauseBtn");
 const songList = document.getElementById("songList");
 const searchInput = document.getElementById("search");
+const top100Section = document.getElementById("top100Section");
+const top100List = document.getElementById("top100List");
 
-/* ===== SONG DATA ===== */
+/* ===== ALL SONGS ===== */
 const songs = [
-  {title: "4 Big Guys", artist: "DigBar", src: "music/4 Big Guys.mp3"},
-  {title: "BabyDoll", artist: "Dominic Fike", src: "music/Dominic Fike Baby Doll (Official Audio).mp3"},
+
+  // TOP 100 SONGS
+  {
+    title: "4 Big Guys",
+    artist: "DigBar",
+    src: "music/4 Big Guys.mp3"
+  },
+
+  {
+    title: "BabyDoll",
+    artist: "Dominic Fike",
+    src: "music/Baby Doll.mp3"
+  },
+
+  // OTHER SONGS
+  {
+    title: "Example Song",
+    artist: "Example Artist",
+    src: "music/example.mp3"
+  }
+
+];
+
+/* ===== TOP 100 ONLY ===== */
+const top100Songs = [
+
+  songs[0],
+  songs[1]
+
 ];
 
 let songIndex = 0;
@@ -52,16 +81,47 @@ function renderSongs(list) {
   });
 }
 
+/* ===== RENDER TOP 100 ===== */
+function renderTop100() {
+
+  top100List.innerHTML = "";
+
+  top100Songs.forEach(song => {
+
+    const realIndex = songs.indexOf(song);
+
+    const div = document.createElement("div");
+
+    div.className = "song";
+
+    div.textContent = `${song.title} – ${song.artist}`;
+
+    div.onclick = () => playSong(realIndex);
+
+    top100List.appendChild(div);
+
+  });
+
+}
 /* ===== SEARCH ===== */
 function filterSongs() {
-  const query = searchInput.value.trim().toLowerCase();
 
-  // If search is empty → show nothing
+  const query = searchInput.value.toLowerCase().trim();
+
+  // EMPTY SEARCH
   if (query === "") {
-    renderSongs([]);
+
+    songList.innerHTML = "";
+
+    top100Section.style.display = "block";
+
     return;
   }
 
+  // HIDE TOP 100
+  top100Section.style.display = "none";
+
+  // SEARCH ALL SONGS
   const filtered = songs.filter(song =>
     song.title.toLowerCase().includes(query) ||
     song.artist.toLowerCase().includes(query)
@@ -71,7 +131,7 @@ function filterSongs() {
 }
 
 searchInput.addEventListener("input", filterSongs);
-renderSongs([]);
+renderTop100();
 
 /* ===== PLAY SONG ===== */
 function playSong(index) {
