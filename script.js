@@ -27,7 +27,7 @@ const songs = [
   {title: "Perfect", artist: "Ed Sheeran", src: "music/Perfect - Ed Sheeran.mp3"},
   {title: "Airplane", artist: "Nick Phoenix", src: "music/Nick Phoenix - Airplane.mp3"},
   {title: "Stay", artist: "The Kid LAROI, Justin Beiber", src: "music/The_Kid_LAROI_Justin_Bieber_-_Stay_(mp3.pm).mp3"},
-  {title: "Believer", artist: "Imagine Dragons", src: "music/example.mp3"},
+  {title: "Believer", artist: "Imagine Dragons", src: "music/Imagine_Dragons_-_Believer_YA_veryu._na_Russkom_(mp3.pm).mp3"},
   {title: "I Wanna Be Yours", artist: "Artic Monkeys", src: "music/example.mp3"},
   {title: "Heat Waves", artist: "Glass Animals", src: "music/example.mp3"},
   {title: "days like today", artist: "snow shack", src: "music/example.mp3"},
