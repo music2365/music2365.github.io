@@ -29,7 +29,7 @@ const songs = [
   {title: "Stay", artist: "The Kid LAROI, Justin Beiber", src: "music/The_Kid_LAROI_Justin_Bieber_-_Stay_(mp3.pm).mp3"},
   {title: "Believer", artist: "Imagine Dragons", src: "music/Believer (03-26) - [8D AUDIO]- Imagine Dragons.mp3"},
   {title: "I Wanna Be Yours", artist: "Artic Monkeys", src: "music/Arctic Monkeys - I Wanna Be Yours.mp3"},
-  {title: "Heat Waves", artist: "Glass Animals", src: "music/example.mp3"},
+  {title: "Heat Waves", artist: "Glass Animals", src: "music/Heat Waves - Glass Animals.mp3"},
   {title: "days like today", artist: "snow shack", src: "music/example.mp3"},
   {title: "lovely", artist: "Billie Elish, Khalid", src: "music/example.mp3"},
   {title: "Yellow", artist: "Coldplay", src: "music/example.mp3"},
