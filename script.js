@@ -29,7 +29,7 @@ const songs = [
   {title: "bad guy", artist: "Billie Elish", src: "music/SpotiDown.App - bad guy - Billie Eilish.mp3"},
   {title: "God's Plan", artist: "Drake", src: "music/SpotiDown.App - God_s Plan - Drake (1).mp3"},
   {title: "Say You Won't Let Go", artist: "James Arthur", src: "music/SpotiDown.App - Say You Won_t Let Go - James Arthur.mp3"},
-  {title: "Perfect", artist: "Ed Sheeran", src: "music/Perfect - SpotiDown.App - Perfect - Ed Sheeran.mp3"},
+  {title: "Perfect", artist: "Ed Sheeran", src: "music/SpotiDown.App - Perfect - Ed Sheeran (1).mp3"},
   {title: "Believer", artist: "Imagine Dragons", src: "music/Believer (03-26) - [8D AUDIO]- Imagine Dragons.mp3"},
   {title: "Havana", artist: "Camila Cabello, Young Thug", src: "music/SpotiDown.App - Havana _feat. Young Thug_ - Camila Cabello.mp3"},
   {title: "Lucid Dreams", artist: "Juice WRLD", src: "music/SpotiDown.App - Lucid Dreams - Juice WRLD.mp3"},
