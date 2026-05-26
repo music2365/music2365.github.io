@@ -1,6 +1,11 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+  <script>
+    if (!sessionStorage.getItem("surveyDone")) {
+      window.location.href = "/survey";
+    }
+  </script>
   <meta charset="UTF-8" />
 
   <title>Music2365</title>
