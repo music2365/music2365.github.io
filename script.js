@@ -118,11 +118,37 @@ const songs = [
   {title: "I Don't Wanna Live Forever", artist: "ZAYN, Taylor Swift", src: "music/example.mp3"},
 
   // OTHER SONGS
-  {
-    title: "Example Song",
-    artist: "Example Artist",
-    src: "music/example.mp3"
-  }
+  {title: "Just The Way You Are", artist: "Milky", src: "music/SpotiDown.App - Just The Way You Are - Milky.mp3"},
+  {title: "Ai Đưa Em Về (Take Me Back Back Home)", artist: "TIA, Lê Thiện Hiếu", src: "music/SpotiDown.App - Ai Đưa Em Về - TIA.mp3"},
+  {title: "Dracula - JENNIE Remix", artist: "Tame Impala, JENNIE", src: "music/SpotiDown.App - Dracula - JENNIE Remix - Tame Impala.mp3"},
+  {title: "NOKIA", artist: "Drake", src: "music/SpotiDown.App - NOKIA - Drake.mp3"},
+  {title: "Dark Thoughts", artist: "Lil Tecca", src: "music/SpotiDown.App - Dark Thoughts - Lil Tecca.mp3"},
+  {title: "Alright", artist: "Kendrick Lamar", src: "music/SpotiDown.App - Alright - Kendrick Lamar.mp3"},
+  {title: "TIKI TIKI - Slowed", artist: "QMIIRm SALIMA CHICA", src: "music/SpotiDown.App - TIKI TIKI - Slowed - QMIIR.mp3"},
+  {title: "Bazooka", artist: "Miami XO", src: "music/SpotiDown.App - Bazooka - Miami XO.mp3"},
+  {title: "NO BATIDÃO", artist: "ZXKAI, slxughter", src: "music/SpotiDown.App - NO BATIDÃO - ZXKAI.mp3"},
+  {title: "Like Him", artist: "Tyler, The Creator, Lola Young", src: "music/SpotiDown.App - Like Him _feat. Lola Young_ - Tyler_ The Creator.mp3"},
+  {title: "ARE WE STILL FRIENDS?", artist: "Tyler, The Creator", src: "music/SpotiDown.App - ARE WE STILL FRIENDS_ - Tyler_ The Creator.mp3"},
+  {title: "See You Again", artist: "Tyler, The Creator, Kali Uchis", src: "music/SpotiDown.App - See You Again _feat. Kali Uchis_ - Tyler_ The Creator.mp3"},
+  {title: "Billie Jean", artist: "Michael Jackson", src: "music/SpotiDown.App - Billie Jean - Michael Jackson.mp3"},
+  {title: "", artist: "", src: "music/"},
+  {title: "", artist: "", src: "music/"},
+  {title: "", artist: "", src: "music/"},
+  {title: "", artist: "", src: "music/"},
+  {title: "", artist: "", src: "music/"},
+  {title: "", artist: "", src: "music/"},
+  {title: "", artist: "", src: "music/"},
+  {title: "", artist: "", src: "music/"},
+  {title: "", artist: "", src: "music/"},
+  {title: "", artist: "", src: "music/"},
+  {title: "", artist: "", src: "music/"},
+  {title: "", artist: "", src: "music/"},
+  {title: "", artist: "", src: "music/"},
+  {title: "", artist: "", src: "music/"},
+  {title: "", artist: "", src: "music/"},
+  {title: "", artist: "", src: "music/"},
+  {title: "", artist: "", src: "music/"},
+  
 
 ];
 
