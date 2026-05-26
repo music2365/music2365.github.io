@@ -1,93 +1,158 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <title>Music2365 Survey</title>
+  <meta charset="UTF-8" />
 
-  <style>
+  <title>Music2365</title>
 
-    body {
-      margin: 0;
-      overflow: hidden;
-      background: black;
+  <!-- FAVICON -->
+  <link rel="icon" href="images/logo.png" type="image/png">
+
+  <!-- CSS -->
+  <link rel="stylesheet" href="style.css" />
+
+  <!-- SURVEY REDIRECT -->
+  <script>
+
+    // TURN SURVEY ON / OFF
+    const surveyEnabled = true;
+
+    // Redirect to survey if enabled
+    if (
+      surveyEnabled &&
+      !sessionStorage.getItem("surveyDone")
+    ) {
+      window.location.href = "/survey";
     }
 
-    iframe {
-      width: 100vw;
-      height: 100vh;
-      border: none;
-    }
+  </script>
 
-    #nextBtn,
-    #skipBtn {
-      position: fixed;
-
-      padding: 14px 28px;
-
-      font-size: 22px;
-
-      border: none;
-      border-radius: 12px;
-
-      background: #1db954;
-      color: black;
-
-      cursor: pointer;
-    }
-
-    /* NEXT BUTTON */
-    #nextBtn {
-      bottom: 30px;
-      right: 30px;
-
-      display: none;
-    }
-
-    /* SKIP BUTTON */
-    #skipBtn {
-      top: 20px;
-      right: 20px;
-    }
-
-  </style>
 </head>
 <body>
 
-  <!-- IFRAME -->
-  <iframe src="https://example.com"></iframe>
+  <!-- TOP BAR -->
+  <div class="top-bar">
 
-  <!-- SKIP -->
-  <button id="skipBtn">
-    Skip
-  </button>
+    <!-- LOGO + TITLE -->
+    <div class="logo-title">
 
-  <!-- NEXT -->
-  <button id="nextBtn">
-    Next
-  </button>
+      <img
+        src="images/logo.png"
+        alt="Music2365 Logo"
+        id="logo"
+      />
 
-  <script>
+      <h1>
+        Music2365 |
+        <span>Song Library</span>
+      </h1>
 
-    // SHOW NEXT AFTER 10 SEC
-    setTimeout(() => {
-      document.getElementById("nextBtn").style.display = "block";
-    }, 10000);
+    </div>
 
-    // NEXT PAGE
-    document.getElementById("nextBtn").onclick = () => {
-      window.location.href = "/survey/page2.html";
-    };
+    <!-- SEARCH -->
+    <div class="search-wrap">
 
-    // SKIP SURVEY
-    document.getElementById("skipBtn").onclick = () => {
+      <span class="search-icon">⌕</span>
 
-      sessionStorage.setItem("surveyDone", "true");
+      <input
+        type="text"
+        id="search"
+        placeholder="Search Song Title or Artist"
+        oninput="filterSongs()"
+      />
 
-      window.location.href = "/";
+    </div>
 
-    };
+  </div>
 
-  </script>
+  <!-- TOP 100 SECTION -->
+  <div id="top100Section">
+
+    <h2 id="top100Title">
+      Top 100 Spotify Songs 2026
+    </h2>
+
+    <div id="top100List"></div>
+
+  </div>
+
+  <!-- SEARCH RESULTS -->
+  <div id="songList"></div>
+
+  <!-- PLAYER -->
+  <div class="player">
+
+    <!-- SONG INFO -->
+    <div class="track-info">
+
+      <div class="title-wrap">
+
+        <div id="songTitle">
+          Select a song
+        </div>
+
+        <div id="songArtist">
+          —
+        </div>
+
+      </div>
+
+    </div>
+
+    <!-- CONTROLS -->
+    <div class="controls">
+
+      <!-- BACK -->
+      <img
+        class="skipBtn"
+        src="images/backward-button.png"
+        alt="Previous"
+        onclick="prev()"
+      />
+
+      <!-- PLAY / PAUSE -->
+      <img
+        id="playPauseBtn"
+        src="images/play-button.png"
+        alt="Play / Pause"
+        onclick="togglePlay()"
+      />
+
+      <!-- NEXT -->
+      <img
+        class="skipBtn"
+        src="images/forward-button.png"
+        alt="Next"
+        onclick="next()"
+      />
+
+    </div>
+
+    <!-- PROGRESS -->
+    <div class="time">
+
+      <span id="current">0:00</span>
+
+      <input
+        type="range"
+        id="progress"
+        value="0"
+        min="0"
+        max="100"
+        step="0.0001"
+      />
+
+      <span id="duration">0:00</span>
+
+    </div>
+
+  </div>
+
+  <!-- AUDIO -->
+  <audio id="audio"></audio>
+
+  <!-- SCRIPT -->
+  <script src="script.js"></script>
 
 </body>
 </html>
