@@ -18,11 +18,9 @@
       border: none;
     }
 
-    #nextBtn {
+    #nextBtn,
+    #skipBtn {
       position: fixed;
-
-      bottom: 30px;
-      right: 30px;
 
       padding: 14px 28px;
 
@@ -35,32 +33,58 @@
       color: black;
 
       cursor: pointer;
+    }
+
+    /* NEXT BUTTON */
+    #nextBtn {
+      bottom: 30px;
+      right: 30px;
 
       display: none;
+    }
+
+    /* SKIP BUTTON */
+    #skipBtn {
+      top: 20px;
+      right: 20px;
     }
 
   </style>
 </head>
 <body>
 
-  <!-- FIRST IFRAME -->
-  <iframe src="https://forms.gle/rfBetPBFVyb5pGHEA"></iframe>
+  <!-- IFRAME -->
+  <iframe src="https://https://forms.gle/W3SLxQLuyeiBambk7"></iframe>
 
-  <!-- NEXT BUTTON -->
+  <!-- SKIP -->
+  <button id="skipBtn">
+    Skip
+  </button>
+
+  <!-- NEXT -->
   <button id="nextBtn">
     Next
   </button>
 
   <script>
 
-    // Show button after 10 sec
+    // SHOW NEXT AFTER 10 SEC
     setTimeout(() => {
       document.getElementById("nextBtn").style.display = "block";
     }, 10000);
 
-    // Go to second page
+    // NEXT PAGE
     document.getElementById("nextBtn").onclick = () => {
       window.location.href = "/survey/page2.html";
+    };
+
+    // SKIP SURVEY
+    document.getElementById("skipBtn").onclick = () => {
+
+      sessionStorage.setItem("surveyDone", "true");
+
+      window.location.href = "/";
+
     };
 
   </script>
