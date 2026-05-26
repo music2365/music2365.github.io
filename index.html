@@ -2,9 +2,18 @@
 <html lang="en">
 <head>
   <script>
-    if (!sessionStorage.getItem("surveyDone")) {
+
+    // TURN SURVEY ON / OFF
+    const surveyEnabled = true;
+
+    // Redirect only if enabled
+    if (
+      surveyEnabled &&
+      !sessionStorage.getItem("surveyDone")
+    ) {
       window.location.href = "/survey";
     }
+
   </script>
   <meta charset="UTF-8" />
 
