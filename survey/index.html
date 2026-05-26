@@ -1,1 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Music2365 Survey</title>
 
+  <style>
+
+    body {
+      margin: 0;
+      overflow: hidden;
+      background: black;
+    }
+
+    iframe {
+      width: 100vw;
+      height: 100vh;
+      border: none;
+    }
+
+    #nextBtn {
+      position: fixed;
+
+      bottom: 30px;
+      right: 30px;
+
+      padding: 14px 28px;
+
+      font-size: 22px;
+
+      border: none;
+      border-radius: 12px;
+
+      background: #1db954;
+      color: black;
+
+      cursor: pointer;
+
+      display: none;
+    }
+
+  </style>
+</head>
+<body>
+
+  <!-- FIRST IFRAME -->
+  <iframe src="https://example.com"></iframe>
+
+  <!-- NEXT BUTTON -->
+  <button id="nextBtn">
+    Next
+  </button>
+
+  <script>
+
+    // Show button after 10 sec
+    setTimeout(() => {
+      document.getElementById("nextBtn").style.display = "block";
+    }, 10000);
+
+    // Go to second page
+    document.getElementById("nextBtn").onclick = () => {
+      window.location.href = "/survey/page2.html";
+    };
+
+  </script>
+
+</body>
+</html>
