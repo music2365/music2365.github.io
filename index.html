@@ -1,145 +1,93 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <script>
+  <meta charset="UTF-8">
+  <title>Music2365 Survey</title>
 
-    // TURN SURVEY ON / OFF
-    const surveyEnabled = true;
+  <style>
 
-    // Redirect only if enabled
-    if (
-      surveyEnabled &&
-      !sessionStorage.getItem("surveyDone")
-    ) {
-      window.location.href = "/survey";
+    body {
+      margin: 0;
+      overflow: hidden;
+      background: black;
     }
 
-  </script>
-  <meta charset="UTF-8" />
+    iframe {
+      width: 100vw;
+      height: 100vh;
+      border: none;
+    }
 
-  <title>Music2365</title>
+    #nextBtn,
+    #skipBtn {
+      position: fixed;
 
-  <link rel="icon" type="image/png" href="images/logo.png">
+      padding: 14px 28px;
 
-  <link rel="stylesheet" href="style.css" />
+      font-size: 22px;
+
+      border: none;
+      border-radius: 12px;
+
+      background: #1db954;
+      color: black;
+
+      cursor: pointer;
+    }
+
+    /* NEXT BUTTON */
+    #nextBtn {
+      bottom: 30px;
+      right: 30px;
+
+      display: none;
+    }
+
+    /* SKIP BUTTON */
+    #skipBtn {
+      top: 20px;
+      right: 20px;
+    }
+
+  </style>
 </head>
 <body>
 
-  <!-- TOP BAR -->
-  <div class="top-bar">
+  <!-- IFRAME -->
+  <iframe src="https://example.com"></iframe>
 
-    <div class="logo-title">
+  <!-- SKIP -->
+  <button id="skipBtn">
+    Skip
+  </button>
 
-      <img
-        src="images/logo.png"
-        alt="Musify Logo"
-        id="logo"
-      />
+  <!-- NEXT -->
+  <button id="nextBtn">
+    Next
+  </button>
 
-     <h1>
-      Music2365 |
-      <span>Song Library</span>
-     </h1>
+  <script>
 
-</div>
+    // SHOW NEXT AFTER 10 SEC
+    setTimeout(() => {
+      document.getElementById("nextBtn").style.display = "block";
+    }, 10000);
 
-    <div class="search-wrap">
+    // NEXT PAGE
+    document.getElementById("nextBtn").onclick = () => {
+      window.location.href = "/survey/page2.html";
+    };
 
-      <span class="search-icon">⌕</span>
+    // SKIP SURVEY
+    document.getElementById("skipBtn").onclick = () => {
 
-      <input
-        type="text"
-        id="search"
-        placeholder="Search Song Title or Artist"
-        oninput="filterSongs()"
-      />
+      sessionStorage.setItem("surveyDone", "true");
 
-    </div>
+      window.location.href = "/";
 
-  </div>
-    <div id="top100Section">
+    };
 
-      <h2 id="top100Title">
-        Top 100 Streamed Spotify Songs
-      </h2>
-
-    <div id="top100List"></div>
-
-  </div>
-  <!-- SONGS -->
-  <div id="songList"></div>
-
-  <!-- PLAYER -->
-  <div class="player">
-
-    <!-- SONG INFO -->
-    <div class="track-info">
-
-      <div class="title-wrap">
-        <div id="songTitle">Select a song</div>
-        <div id="songArtist">—</div>
-      </div>
-
-    </div>
-
- <!-- CONTROLS -->
-<div class="controls">
-
-  <img
-    class="skipBtn"
-    src="images/image.png"
-    alt="Back 15 Seconds"
-    onclick="back15()"
-  />
-
-  <img
-    id="playPauseBtn"
-    src="images/play.png"
-    alt="Play / Pause"
-    onclick="togglePlay()"
-  />
-
-  <img
-    class="skipBtn"
-    src="images/Double-Tailless-Triangle-Arrow-Right--Streamline-Sharp.png"
-    alt="Forward 15 Seconds"
-    onclick="forward15()"
-  />
-
-  <img
-    id="loopBtn"
-    src="images/repeatgreen.png"
-    alt="Loop"
-    onclick="toggleLoop()"
-  />  
-
-</div>
-
-    <!-- PROGRESS -->
-    <div class="time">
-
-      <span id="current">0:00</span>
-
-      <input
-        type="range"
-        id="progress"
-        value="0"
-        min="0"
-        max="100"
-        step="0.0001"
-      />
-
-      <span id="duration">0:00</span>
-
-    </div>
-
-  </div>
-
-  <!-- AUDIO -->
-  <audio id="audio"></audio>
-
-  <!-- SCRIPT -->
-  <script src="script.js"></script>
+  </script>
 
 </body>
 </html>
